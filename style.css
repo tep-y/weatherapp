@@ -64,7 +64,7 @@ body {
 
 .app-top-bar .toggle-switch {
   position: relative;
-  width: 48px;
+  width: 36px;
   height: 24px;
 }
 
@@ -74,7 +74,7 @@ body {
   right: 0;
   width: 100%;
   height: 24px;
-  background-color: var(--toggle-light);
+  background-color: var(--toggle-dark);
   border-radius: 50px;
   cursor: pointer;
 }
@@ -86,33 +86,38 @@ body {
 
 .slider {
   position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   width: 100%;
   height: 100%;
-  border-radius: 50%;
-  transition: 0.3s;
-  border-color: red 1px solid;
+  border-radius: 50px;
+  border: none;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 input:checked ~ .slider {
-  background-color: var(--toggle-dark);
+  background-color: var(--toggle-light);
 }
 
-.app-top-bar .slider:before {
+.slider::before {
   content: "";
   position: absolute;
-  top: 0px;
-  right: 0px;
-  width: 48px;
-  height: 24px;
+  left: 5px;
+  top: 5px;
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
-  box-shadow: inset 28px -4px 0px 0px var(--dark);
-  background-color: var(--toggle-light);
-  transform: 0.3s;
+  box-shadow: inset 6px 0px 0px 0px var(--toggle-light);
+  background-color: var(--toggle-dark);
+  transform: 0.4s;
 }
 
 input:checked ~ .slider::before {
-  background-color: var(--toggle-light);
-  transform: translateX(95px);
+  background-color: var(--toggle-dark);
+  transform: translateX(13px);
   box-shadow: none;
 }
 
