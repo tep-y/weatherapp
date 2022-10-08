@@ -11,26 +11,27 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script  src="script.js" defer></script>
 </head>
 <body>
   <div class="container">
-    <div class="app-container">
+    <div class="app-container" id="contain" data-theme="light">
       <div class="app-top-bar">
-        <h1>Cold rainy day</h1>
-        <div class="toggle-switch" id="toggle">
+        <h3 id="weather-description">Cloudy day</h3>
+        <div class="toggle-switch">
           <label>
-            <input type="checkbox">
+            <input type="checkbox" id="toggle" onclick="toggler()">
             <span class="slider"></span>
           </label>
         </div>
       </div>
       <div class="app-visual">
-        <i class="fa-solid fa-sun fa-2xl"></i>
+        <img src="/images/icon_sun.png" alt="weather icon" id="icon">
       </div>
       <div class="app-content">
         <h3>Montreal, Québec</h3>
-        <h2>20&deg;</h2>
-        <p>feels like 28&deg;</p>
+        <h2 id="weather-degree">20&deg;</h2>
+        <p id="weather-subdegree">feels like 17&deg;</p>
       </div>
     </div>
   </div>

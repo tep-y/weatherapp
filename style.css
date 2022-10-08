@@ -1,8 +1,20 @@
 :root {
-  --font-color: #222;
-  --bg-color: #f2f3f7;
+  --font-color: red;
+  --app-color: #f2f3f7;
+  --bg-color: #cecece;
   --toggle-light: #d8dbe0;
   --toggle-dark: #28292c;
+  --app-shadow: 
+    -2px -2px 4px 0px #ffffff, 
+    50px 50px 50px 0px rgba(0, 0, 0, 0.25);
+}
+
+[data-theme=dark] {
+  --font-color: #fff;
+  --app-color: #181818;
+  --app-shadow: 
+  -2px -2px 4px 0px #272458, 
+  50px 50px 50px 0px rgba(0, 0, 0, 0.25);
 }
 
 * {
@@ -13,10 +25,11 @@
 
 html {
   font-family: 'Poppins', sans-serif;
+  color: var(--font-color);
 }
 
 body {
-  background-color: #cecece;
+  background-color: var(--bg-color);
 }
 
 
@@ -28,17 +41,11 @@ body {
   flex-direction: column;
 }
 
-/* @media screen and (min-width: 800px) {
-  .container {
-    flex-direction: row;
-  }
-} */
-
 .app-container {
   position: relative;
-  background-color: var(--bg-color);
+  background-color: var(--app-color);
   border-radius: 40px;
-  box-shadow: -2px -2px 4px 0px #ffffff, 50px 50px 50px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: var(--app-shadow);
   display: block;
   flex: 1;
   min-height: 500px;
@@ -46,19 +53,20 @@ body {
   margin-bottom: 25px;
   overflow: hidden;
   padding: 30px;
+  color: var(--font-color);
 }
 
 .app-top-bar {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  width: 200px;
   max-width: 350px;
   margin: 10px;
+  padding-bottom: 30px;
 }
 
 .app-top-bar h1 {
-  max-width: 10px;
+  max-width: 150px;
   font-size: 16px;
 }
 
@@ -98,10 +106,6 @@ body {
   transition: 0.4s;
 }
 
-input:checked ~ .slider {
-  background-color: var(--toggle-light);
-}
-
 .slider::before {
   content: "";
   position: absolute;
@@ -113,6 +117,10 @@ input:checked ~ .slider {
   box-shadow: inset 6px 0px 0px 0px var(--toggle-light);
   background-color: var(--toggle-dark);
   transform: 0.4s;
+}
+
+input:checked ~ .slider {
+  background-color: var(--toggle-light);
 }
 
 input:checked ~ .slider::before {
@@ -130,10 +138,16 @@ input:checked ~ .slider::before {
   margin: 30px;
 }
 
+.app-visual img {
+  width: 200px;
+}
+
 .app-content {
   position: absolute;
   bottom: 0;
   left: 50%;
+  min-width: 250px;
+  max-width: 300px;
   transform: translate(-50%, -50%);
   text-align: center;
 }
